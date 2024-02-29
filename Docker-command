@@ -1,0 +1,28 @@
+
+**DOCKER IMAGES COMMANDS**
+
+1. docker images                           ---- to check images present in local
+2. docker search images-name               ---- to seerch images on docker-hub
+3. docker pull images-name                 ---- to pull images from docker-hub
+4. docker rmi images-name                  ---- to delete images
+5. docker images prune                     ---- to delete all unused images
+6. docker tag old-images  new-images:v1    ---- to rename old images to new image
+7. docker build -t images-name:v1  .       ---- to build images from docker file here v1 is tag for images  . MEANCE CURRENT DIRECTORY
+
+**DOCKER CONTAINER COMMANDS**
+
+8. docker ps                     ---- to check all runnig containers
+9. docker ps -a                  ---- to check all stop container
+10.docker start containe-name    ---- to start container
+11.docker stop container         ---- to stop container
+12.docker rm container-name      ---- to delete container
+13.docker container prune        ---- to delet all unused container at a time
+14.docker  attach container-name ---- to enter in container
+      OR
+15.docker exec -it contaier-name /bin/bash
+16.docker run -it -d -p 8080:80 or P --name contaner-name image-name     ---- to make and run contaienr from images amd  p for assing port
+                                                                           or P take random port.
+17.systemctl status docker       ---- to check docker runnig or not
+18.systemctl start/stop docker   ---- to start or stop docker                   
+              
+
