@@ -1,0 +1,23 @@
+# Use an official Python runtime as a base image
+FROM python:3.8
+
+# Set the working directory inside the container
+WORKDIR /usr/src/app
+
+# Copy the requirements.txt file to the working directory
+COPY requirements.txt ./                          # here requirements.txt is file which containe the dependecy for paython code.
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt  # pip is the package installer for Python
+
+# Copy the entire application code to the working directory
+COPY . .
+
+# Expose any necessary ports
+# EXPOSE 8080
+
+# Define the command to run your application
+CMD ["python", "app.py"]
+
+
+  
