@@ -1,0 +1,35 @@
+# HOW TO WRITE DOCKER IMAGES FOR NODEJS
+
+1.Base Image:
+#FROM node:12.2
+This line specifies the base Docker image to use, which is node:12.2. It means the container will have Node.js version 12.2 installed.
+
+2.Environment Variable:
+
+#ENV HOME=/home/app
+This sets the environment variable HOME to /home/app. It is a convention to use this directory as the home directory for the application within the container.
+
+3.Install htop
+#RUN apt-get update && apt-get install htop
+This installs the htop tool inside the container. htop is a process viewer, similar to the traditional top command but with a more user-friendly interface.
+
+4.Copy Package Files:
+
+COPY package.json package-lock.json $HOME/node_docker/
+This copies the package.json and package-lock.json files from the current directory to the /home/app/node_docker/ directory inside the container. These files are typically used for managing Node.js dependencies.
+
+5.Set Working Directory:
+WORKDIR $HOME/node_docker
+This sets the working directory inside the container to /home/app/node_docker/. Subsequent commands will be executed in this directory.
+
+6.Install Node.js Dependencie
+RUN npm install --silent --progress=false
+This installs Node.js dependencies based on the package.json and package-lock.json files. The --silent flag suppresses the npm output, and --progress=false disables progress bars during installation.
+
+7.Copy Application Code:
+COPY . $HOME/node_docker
+This copies the rest of the application code from the current directory to /home/app/node_docker/ inside the container.
+
+8.Default Command:
+CMD ["npm"]
+This sets the default command to execute when the container starts. However, the provided snippet seems incomplete, and it doesn't specify a particular npm command.
