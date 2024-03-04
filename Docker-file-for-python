@@ -5,10 +5,10 @@ FROM python:3.8
 WORKDIR /usr/src/app
 
 3# Copy the requirements.txt file to the working directory
-COPY requirements.txt ./                          # here requirements.txt is file which containe the dependecy for paython code.
+COPY requirements.txt ./                          # here requirements.txt is file which containe or manage the dependecy for paython code.
 
 4# Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt  # pip is the package installer for Python
+RUN pip install --no-cache-dir -r requirements.txt  # pip is the package installer for Python.
 
 5# Copy the entire application code to the working directory
 COPY . .
@@ -19,6 +19,7 @@ COPY . .
 7# Define the command to run your application
 CMD ["python", "app.py"]    # .py is assumed to be the main Python script or application that you want to run when the Docker container starts it give with code .
 
-##NOTE:- the requirements.txt file lists the Python packages and their versions, and pip install is used in the Dockerfile to install those packages within the Docker container. 
+##NOTE:- the requirements.txt file lists the Python packages and their versions,
+         and pip install is used in the Dockerfile to install those packages within the Docker container. 
          This ensures that the container has all the necessary dependencies for your Python application to run.
   
