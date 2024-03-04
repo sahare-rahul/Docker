@@ -1,5 +1,31 @@
 # HOW TO WRITE DOCKER IMAGES FOR NODEJS
 
+# FIRST DOCKER FILE FOR  NODEJS
+# Use an official Node.js runtime as a base image
+FROM node:14
+
+# Set the working directory inside the container
+WORKDIR /usr/src/app
+
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
+
+# Install application dependencies
+RUN npm install
+
+# Copy the entire application code to the working directory
+COPY . .
+
+# Expose the port on which your application will run
+EXPOSE 3000
+
+# Define the command to run your application
+CMD ["npm", "start"]
+
+
+
+#SECOND DOCKER FILE 
+
 1.Base Image:
 #FROM node:12.2
 This line specifies the base Docker image to use, which is node:12.2. It means the container will have Node.js version 12.2 installed.
@@ -33,3 +59,8 @@ This copies the rest of the application code from the current directory to /home
 8.Default Command:
 CMD ["npm"]
 This sets the default command to execute when the container starts. However, the provided snippet seems incomplete, and it doesn't specify a particular npm command.
+
+
+
+
+
