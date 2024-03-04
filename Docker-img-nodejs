@@ -42,7 +42,8 @@ This installs the htop tool inside the container. htop is a process viewer, simi
 4.Copy Package Files:
 
 COPY package.json package-lock.json $HOME/node_docker/
-This copies the package.json and package-lock.json files from the current directory to the /home/app/node_docker/ directory inside the container. These files are typically used for managing Node.js dependencies.
+This copies the package.json and package-lock.json files from the current directory to the /home/app/node_docker/ directory inside the container.
+These files are typically used for managing Node.js dependencies.
 
 5.Set Working Directory:
 WORKDIR $HOME/node_docker
@@ -50,7 +51,8 @@ This sets the working directory inside the container to /home/app/node_docker/. 
 
 6.Install Node.js Dependencie
 RUN npm install --silent --progress=false
-This installs Node.js dependencies based on the package.json and package-lock.json files. The --silent flag suppresses the npm output, and --progress=false disables progress bars during installation.
+This installs Node.js dependencies based on the package.json and package-lock.json files. 
+The --silent flag suppresses the npm output, and --progress=false disables progress bars during installation.
 
 7.Copy Application Code:
 COPY . $HOME/node_docker
@@ -58,7 +60,8 @@ This copies the rest of the application code from the current directory to /home
 
 8.Default Command:
 CMD ["npm"]
-This sets the default command to execute when the container starts. However, the provided snippet seems incomplete, and it doesn't specify a particular npm command.
+This sets the default command to execute when the container starts. However, the provided snippet seems incomplete,
+and it doesn't specify a particular npm command.
 
 
 
