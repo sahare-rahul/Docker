@@ -17,7 +17,7 @@ COPY . .
 # EXPOSE 8080
 
 # Define the command to run your application
-CMD ["python", "app.py"]    # .py is script for python which used to run container when image run. 
+CMD ["python", "app.py"]    # .py is assumed to be the main Python script or application that you want to run when the Docker container starts it give with code .
 
 ##NOTE:- the requirements.txt file lists the Python packages and their versions, and pip install is used in the Dockerfile to install those packages within the Docker container. 
          This ensures that the container has all the necessary dependencies for your Python application to run.
