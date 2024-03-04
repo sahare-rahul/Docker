@@ -12,3 +12,5 @@ EXPOSE 8080
 
 5# Define the command to run your application
 CMD ["java", "-jar", "app.jar"]            # and here we run our app.jar    
+
+#NOTE:- pom.xml file to manage the dependency of java.
