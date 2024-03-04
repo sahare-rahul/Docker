@@ -20,8 +20,10 @@ COPY . .
 EXPOSE 3000
 
 7# Define the command to run your application
-CMD ["npm", "start"]
-
+CMD ["npm", "start"]       
+                         #secifies the default command to run when the container starts.
+                         In this case, it starts the Node.js application using the npm start command. 
+                         Ensure that your package.json file has a "start" script defined.
 
 
 #SECOND DOCKER FILE 
