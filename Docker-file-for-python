@@ -19,5 +19,6 @@ COPY . .
 # Define the command to run your application
 CMD ["python", "app.py"]
 
-
+##NOTE:- the requirements.txt file lists the Python packages and their versions, and pip install is used in the Dockerfile to install those packages within the Docker container. 
+         This ensures that the container has all the necessary dependencies for your Python application to run.
   
