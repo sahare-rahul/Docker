@@ -1,8 +1,8 @@
 # HOW TO WRITE DOCKER IMAGES FOR NODEJS
 
 # FIRST DOCKER FILE FOR  NODEJS
-1# Use an official Node.js runtime as a base image
-FROM node:14
+1# Use an official Node.js runtime as a base image      NOTE:-1. IN NODEJS applicatoncode stored in "server.js".
+FROM node:14                                                   2. and dependencys of application stored in  package*.json 
 
 2# Set the working directory inside the container
 WORKDIR /usr/src/app
