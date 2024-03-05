@@ -14,5 +14,5 @@ EXPOSE 8080
 CMD ["java", "-jar", "app.jar"]            # and here we run our app.jar    
 
 #NOTE:- 1- "pom.xml" file to manage the dependency of java.
-        2- and code of java base application stored in "src" folder.
+        2- and code of java base application code stored in "src" folder.
       
