@@ -1,7 +1,6 @@
 FROM openjdk:8-jdk-alpine as builder      #NOTE- as builder means we are giving name or considering 1 stage is a builder.
 WORKDIR  /app/source
 COPY . /app/source
-WORKDIR /app/source
 RUN ./mvnw clean package
 
 
