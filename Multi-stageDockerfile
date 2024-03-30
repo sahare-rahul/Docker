@@ -1,11 +1,11 @@
 FROM openjdk:8-jdk-alpine as builder      #NOTE- as builder means we are giving name or considering 1 stage is a builder.
-RUN mkdir -p /app/source
+WORKDIR  /app/source
 COPY . /app/source
 WORKDIR /app/source
 RUN ./mvnw clean package
 
 
 FROM builder                                # here we take builder as a base image, upper stages will work as a base images for second stage or we can take another base images here.
-COPY --from=builder /app/source/target/*.jar /app/app.jar
+COPY --from=builder /app/source/target/*.jar /app/app.jar   #HERE we only calling final images to second stage not calling code, librery and dependency for second stage it make images lightweight.
 EXPOSE 8080
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom", "-jar", "/app/app.jar"]
